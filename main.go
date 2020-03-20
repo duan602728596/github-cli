@@ -6,12 +6,16 @@ import (
   "github-cli/src/getConfig"
   "github-cli/src/project"
   "os"
+  "os/exec"
+  "path/filepath"
 )
 
 func main()  {
   fmt.Println("repositories(r/repo): 查询自己的项目\nstars      (s/stars): 查询关注的项目") // 输出说明
 
-  dir, _ := os.Getwd()               // 文件目录
+  f, _ := exec.LookPath(os.Args[0])
+  ex, _ := filepath.Abs(f)
+  dir := filepath.Dir(ex) // 文件目录
   config := getConfig.GetConfig(dir) // 获取配置
 
   queryType := "" // 查询参数
