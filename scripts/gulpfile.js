@@ -44,4 +44,10 @@ function copyConfigFile() {
     .pipe(gulp.dest('../dist/github-cli'))
 }
 
-exports.default = gulp.parallel(buildProject, copyTemplate, copyConfigFile);
+/* 拷贝许可证 */
+function copyLicense() {
+  return gulp.src('../LICENSE')
+    .pipe(gulp.dest('../dist/github-cli'))
+}
+
+exports.default = gulp.parallel(buildProject, copyTemplate, copyConfigFile, copyLicense);
