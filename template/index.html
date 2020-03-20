@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>github {{ .QueryType }}</title>
+  <style>
+    body { padding: 16px; }
+    :root { --primary-color: #2f54eb; --neutral: #bfbfbf; }
+    .title { font-size: 16px; color: var(--primary-color); }
+    .table { border-collapse: collapse; font-size: 14px; }
+    .table, .table th, .table td { border: 1px solid var(--neutral); }
+    .table th, .table td { padding: 6px; }
+    .link { color: var(--primary-color); text-decoration: none; }
+    .link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<h1 class="title">{{ .Username }}: github {{ .QueryType }}</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>项目名称</th>
+      <th>项目介绍</th>
+      <th>项目地址</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $i, $v := .Nodes }}
+      <tr>
+        {{ if eq $.QueryType "stars" }}
+          <td>{{ $v.NameWithOwner }}</td>
+        {{ else }}
+          <td>{{ $v.Name }}</td>
+        {{ end }}
+        <td>
+          <a class="link" href="{{ $v.Url }}" target="_blank" rel="noreferrer">{{ $v.Url }}</a>
+        </td>
+        <td>{{ $v.Description }}</td>
+      </tr>
+    {{ end }}
+  </tbody>
+</table>
+</body>
+</html>
