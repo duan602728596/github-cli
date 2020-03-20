@@ -1,13 +1,13 @@
 const childProcess = require('child_process');
 const path = require('path');
+const os = require('os');
 const gulp = require('gulp');
 const rename = require('gulp-rename');
 const chalk = require('chalk');
 
-/* 编译go */
 function buildProject() {
   return new Promise((resolve, reject) => {
-    const child = childProcess.spawn('yarn', ['build:pro'], {
+    const child = childProcess.spawn('npm', ['run', os.platform() === 'win32' ? 'build:win' : 'build:unix'], {
       cwd: path.join(__dirname, '..')
     });
 

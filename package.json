@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "rimraf dist && gulp --gulpfile scripts/gulpfile.js",
-    "build:pro": "go build -o dist/github-cli/gbc"
+    "build:unix": "go build -o dist/github-cli/gbc",
+    "build:win": "go build -o dist/github-cli/gbc.exe"
   },
   "dependencies": {
     "chalk": "^3.0.0",
