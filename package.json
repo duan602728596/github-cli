@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "rimraf dist && gulp --gulpfile scripts/gulpfile.js",
+    "build": "rimraf dist && gulp",
     "build:unix": "go build -o dist/github-cli/gbc",
     "build:win": "go build -o dist/github-cli/gbc.exe"
   },
