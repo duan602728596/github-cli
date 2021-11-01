@@ -10,24 +10,24 @@ import (
 )
 
 type Node struct {
-  Id string `json: "id"`
-  Url string `json: "url"`
-  Name string `json: "name"`
-  NameWithOwner string `json: "nameWithOwner"`
-  Description string `json: "description"`
+  Id string `json:"id"`
+  Url string `json:"url"`
+  Name string `json:"name"`
+  NameWithOwner string `json:"nameWithOwner"`
+  Description string `json:"description"`
 }
 
 type PageInfo struct {
-  EndCursor string `json: "endCursor"`
-  HasNextPage bool `json: "hasNextPage"`
-  HasPreviousPage bool `json: "hasPreviousPage"`
-  StartCursor string `json: "startCursor"`
+  EndCursor string `json:"endCursor"`
+  HasNextPage bool `json:"hasNextPage"`
+  HasPreviousPage bool `json:"hasPreviousPage"`
+  StartCursor string `json:"startCursor"`
 }
 
 type Repositories struct {
-  Nodes []Node `json: "nodes"`
-  PageInfo PageInfo `json: "pageInfo"`
-  TotalCount int `json: "totalCount"`
+  Nodes []Node `json:"nodes"`
+  PageInfo PageInfo `json:"pageInfo"`
+  TotalCount int `json:"totalCount"`
 }
 
 type ResData struct {
