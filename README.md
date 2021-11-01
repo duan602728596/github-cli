@@ -1,6 +1,6 @@
 # github-cli
 
-用来全部获取自己关注的项目（stars）和字节的项目（repositories）。
+用来全部获取自己关注的项目（stars）和自己的项目（repositories）。
 
 ## 如何使用
 

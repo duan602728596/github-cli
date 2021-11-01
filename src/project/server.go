@@ -11,7 +11,7 @@ import (
 )
 
 /* 打开浏览器 */
-func openUrlInBrowser(url string)  {
+func openUrlInBrowser(url string) {
   switch runtime.GOOS {
     case "darwin":
       exec.Command("open", url).Start()
@@ -47,7 +47,7 @@ func getFreePort() (int, error) {
 }
 
 /* 启动http服务 */
-func Server(htmlResult string, port string, openBrowser bool)  {
+func Server(htmlResult string, port string, openBrowser bool) {
   // 获取端口
   usePort := port
 
