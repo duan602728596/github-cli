@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "build": "rimraf dist && gulp",
     "build:unix": "go build -o dist/github-cli/gbc",

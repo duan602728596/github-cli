@@ -1,8 +1,8 @@
-const childProcess = require('child_process');
-const os = require('os');
-const gulp = require('gulp');
-const rename = require('gulp-rename');
-const chalk = require('chalk');
+import childProcess from 'node:child_process';
+import os from 'node:os';
+import gulp from 'gulp';
+import rename from 'gulp-rename';
+import chalk from 'chalk';
 
 function buildProject() {
   return new Promise((resolve, reject) => {
@@ -48,4 +48,4 @@ function copyLicense() {
     .pipe(gulp.dest('dist/github-cli'))
 }
 
-exports.default = gulp.parallel(buildProject, copyTemplate, copyConfigFile, copyLicense);
+export default gulp.parallel(buildProject, copyTemplate, copyConfigFile, copyLicense);
